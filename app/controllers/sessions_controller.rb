@@ -1,0 +1,28 @@
+class SessionsController < ApplicationController
+
+    def login
+
+    end
+
+    def create
+        user = User.find_by_username(params[:username])
+        if user && user.authenticate(params[:password])
+          session[:user_id] = user.id
+          redirect_to user_path(user)
+       else
+        flash[:errors] = ["Invalid Username or Password!"]
+        redirect_to "/login"
+       end
+    end
+    
+
+    def logout
+        session.clear
+        redirect_to new_user_path
+    end
+
+   
+
+
+
+end
