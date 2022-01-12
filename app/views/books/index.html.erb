@@ -1,0 +1,6 @@
+<h3>Books List:</h3>
+
+
+  <% @books.each do |book| %> <!-- /movies/:id -->
+    <li><%= link_to book.title, book_path(book) %></li>
+  <% end %>
