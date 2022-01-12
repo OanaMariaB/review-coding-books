@@ -5,9 +5,11 @@ Rails.application.routes.draw do
   post "/login", to: "sessions#create"
   delete "/logout", to: "sessions#logout", as: "logout"
 
-  match '/auth/:google_oauth2/callback' => 'sessions#google', via: [:get, :post]
+ # match '/auth/:google_oauth2/callback' => 'sessions#omniauth', via: [:get,:post]
 
-
+  get '/auth/:provider/callback' => 'sessions#omniauth'
+  
 
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
+

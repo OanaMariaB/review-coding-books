@@ -13,16 +13,30 @@ class SessionsController < ApplicationController
         flash[:errors] = ["Invalid Username or Password!"]
         redirect_to "/login"
        end
-    end
-    
+    end 
 
     def logout
         session.clear
         redirect_to new_user_path
     end
 
-   
+    def omniauth
+        @user = User.find_or_create_by(username: auth["info"]["name"]) do |user|
+            user.password = SecureRandom.hex(10)
+        end
+        if @user && @user.save
+            session[:user_id] = @user.id
+            redirect_to user_path 
+        else
+            redirect_to "/login"
+        end
+    end
 
+    private
+    
+    def auth 
+        request.env['omniauth.auth']
+    end
 
 
 end
