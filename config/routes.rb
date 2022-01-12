@@ -1,6 +1,10 @@
 Rails.application.routes.draw do
   resources :users
 
+  resources :books
+  resources :reviews
+
+
   get "/login", to: "sessions#login", as: "login"
   post "/login", to: "sessions#create"
   delete "/logout", to: "sessions#logout", as: "logout"
