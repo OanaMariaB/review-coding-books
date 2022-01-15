@@ -1,8 +1,10 @@
 Rails.application.routes.draw do
   resources :users
 
-  resources :books
-  resources :reviews
+  resources :books do
+    resources :reviews, only: [:create, :update]
+  end
+
 
 
   get "/login", to: "sessions#login", as: "login"

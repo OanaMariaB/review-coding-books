@@ -1,0 +1,5 @@
+<% @book.reviews.each do |review| %>
+    <%= review.user.username %>: <%= review.rating %>
+    <%=  review.content %>
+<% end %>
+
