@@ -1,2 +1,10 @@
+
+
 <%= review.rating %> <br> 
-<%= review.content %> <br>
+<%= review.content %> <br><br>
+
+
+<div>
+<%= link_to "Edit", edit_book_review_path(review.book, review) %>
+<%= link_to "Delete", book_review_path(review.book, review), method: :delete %>
+</div> 
