@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   resources :users
 
   resources :books do
-    resources :reviews, only: [:create, :update]
+    resources :reviews
   end
 
 

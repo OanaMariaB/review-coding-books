@@ -1,14 +1,5 @@
 <h3> Create a Review </h3>
 
-
-<%= form_for [@book, @review] do |f| %>
-    <%=render partial: "layouts/errors", locals: {record: @review} %>
-    <%= f.label :rating %><br>
-    <%= f.number_field :rating, :min => 1, :max => 10 %> <br>
-    <%= f.label :content %> <br>
-    <%= f.text_area :content, :cols => 30, :rows => 8 %> <br>
-    <%= f.submit %> 
-<% end %>
-
+<%= render 'form' %>
 
 
