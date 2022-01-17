@@ -40,7 +40,7 @@ class BooksController < ApplicationController
         redirect_to books_path
     end
     
-    private
+private
 
     def find_book
         @book = Book.find_by_id(params[:id])

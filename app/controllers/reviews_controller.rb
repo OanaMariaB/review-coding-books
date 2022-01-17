@@ -38,17 +38,16 @@ class ReviewsController < ApplicationController
 private
 
 
-def review_params
-    params.require(:review).permit(:rating, :content, :user_id, :book_id)
-end
+    def review_params
+        params.require(:review).permit(:rating, :content, :user_id, :book_id)
+    end
 
-#in order to access @book in all of our views
-def find_book
-    @book = Book.find(params[:book_id])
-end
+    def find_book
+        @book = Book.find(params[:book_id])
+    end
 
-def find_review
-    @review = Review.find(params[:id])
-end
+    def find_review
+        @review = Review.find(params[:id])
+    end
     
 end

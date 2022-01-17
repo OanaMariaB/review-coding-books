@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+
+  root 'sessions#welcome'
+  
   resources :users
 
   resources :books do
