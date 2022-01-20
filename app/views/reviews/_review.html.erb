@@ -1,7 +1,8 @@
 
 
-<%= review.rating %> <br> 
-<%= review.content %> <br><br>
+<%= review.rating %> <br>
+<%= review.content %> <br>
+
 
 <% if logged_in? %>
 		<% if review.user_id == current_user.id %>

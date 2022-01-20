@@ -34,10 +34,6 @@ class ReviewsController < ApplicationController
         redirect_to book_path(@book)
     end
  
-    def newest_reviews
-        @reviews = Review.newest_reviews
-    end
-
 private
 
 
