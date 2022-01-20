@@ -5,9 +5,7 @@ class Review < ApplicationRecord
     validates :content, length: {minimum: 2}
     validates :content, presence: true
 
-    def self.newest_reviews
-      self.order(:created_at).limit(3)
-    end
+ 
 
   
   end
